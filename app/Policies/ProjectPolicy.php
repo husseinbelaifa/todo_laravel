@@ -20,10 +20,10 @@ class ProjectPolicy
         //
     }
 
-    public function  create(User $user,Project $project)
+    public function  create(User $user)
 {
-    // if ($user->role==0) {
-    //     return false;
-    // }else return true;
+    if ($user->role==1) {
+        return true;
+    }else return false;
 }
 }

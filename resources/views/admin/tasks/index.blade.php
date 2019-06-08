@@ -6,6 +6,9 @@
 
 @section('content')
 
+{{-- @foreach ($items as $item)
+{{ $item->project}} <br><br>
+@endforeach --}}
 
 
     <div class="mB-20">

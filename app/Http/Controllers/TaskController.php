@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Task;
+use App\User;
+use App\Project;
 use Illuminate\Http\Request;
+use Spatie\GoogleSearch\Facades\GoogleSearch;
 
 class TaskController extends Controller
 {
@@ -13,11 +16,14 @@ class TaskController extends Controller
     {
 
        
+        // $searchResults = GoogleSearch::getResults('The meaning of life');
+        // dd( $searchResults);
+        
+        $items =Task::with(['user','project'])->get();
+
+        
       
-        
-        $items =Task::all();
-       
-        
+         
 
         return view('admin.tasks.index', compact('items'));
     }

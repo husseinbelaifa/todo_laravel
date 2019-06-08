@@ -21,7 +21,7 @@ class users extends Seeder
                 'name' => 'hadji kouceyla',
                 'email' => $faker->email,
                 'password' => bcrypt('123456'),
-                'role'     => $faker->numberBetween(0,10),
+                'role'     => $faker->numberBetween(0,1),
                 'bio'      => $faker->realText(),
             ]);
         }

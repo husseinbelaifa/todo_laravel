@@ -1,7 +1,7 @@
 @extends('admin.default')
 
 @section('page-header')
-    Users <small>{{ trans('app.manage') }}</small>
+    Projects <small>{{ trans('app.manage') }}</small>
 @endsection
 
 @section('content')
@@ -9,12 +9,16 @@
 
  
   {{-- @if (auth()->user()->role!=0) --}}
+@can('create', \App\Project::class) --}}
 
-  <div class="mB-20">
-    <a href="{{ route(ADMIN . '.users.create') }}" class="btn btn-info">
+<div class="mB-20">
+    <a href="{{ route(ADMIN . '.projects.create') }}" class="btn btn-info">
         {{ trans('app.add_button') }}
     </a>
    </div>
+    
+@endcan
+
       
   {{-- @endif --}}
 

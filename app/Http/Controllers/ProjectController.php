@@ -13,6 +13,8 @@ class ProjectController extends Controller
     {
         $items = Project::latest('updated_at')->get();
 
+        // dd(auth()->user()->can('create',Project::class));
+    
         return view('admin.projects.index', compact('items'));
     }
 
